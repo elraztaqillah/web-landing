@@ -1,0 +1,234 @@
+/*Atas berlaku desktop/mobile, tpi yg bawah khusus desktop*/
+
+/*Navbar */
+.navbar{
+	position: relative;
+		/*non-static*/
+	z-index: 1;
+}
+
+
+.navbar-brand{
+	font-family: Viga;
+	font-size: 32px;
+}
+
+/*Jumbotron */
+.jumbotron {
+	background-image: url(img/img/jumbotron-bg.jpg);
+	background-size: cover;
+		/*penuh/pas */
+	height: 540px;
+	text-align: center;
+	position: relative;
+		/*agar mendukung gradient black */
+
+}
+
+.jumbotron .container{
+	position: relative;
+	z-index: 1;
+}
+
+.jumbotron::after {
+			/*menambah gradient black*/
+	content: '';
+	display: block;
+	width: 100%;
+	height: 80%;
+	background-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+							/*dr bawah ke atas | black solid | black transparan */
+											   /*| bawah       | atas */
+	position: absolute;
+		/*agar naik satu tingkat & gampang dipindahkan*/
+	bottom: 0;
+		/*spy nempel paling bawah jumbotronnya*/
+}
+
+.jumbotron .display-4 {
+	color: white;
+	margin-top: 150px;
+		/*turun kebawah*/
+	font-weight: 200;
+		/*biar langsing */
+	text-shadow: 1px 1px 1px rgba (0, 0, 0, 0.6);
+	font-size: 40px;
+	margin-bottom: 30px; 
+}
+
+.jumbotron .display-4 span{
+	font-weight: 500;
+}
+
+/*Info Panel */
+.info-panel{
+	box-shadow: 0 3px 20px rgba(0,0,0,0.5);
+				/*X  Y   B               opacity*/
+	border-radius: 12px;
+	margin-top: -100px;
+	background-color: white;
+	padding: 30px;
+}
+
+.info-panel img{
+	width: 80px;
+	height: 80px;
+	margin-right: 20px;
+		/*jarak antar element (img & tulisan)*/
+	margin-bottom: 20px;
+}
+
+.info-panel h4{
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-top: 5px;
+}
+
+.info-panel p{
+	font-size: 14px;
+	color: #ACACAC;
+	margin-top: -5px;
+	font-weight: 200;
+}
+
+/*WORKINGSPACE*/
+.workingspace {
+	margin-top: 120px;
+	text-align: center;
+}
+
+
+.workingspace h3{
+	font-size: 52px;
+	font-weight: 200;
+		/*agar ramping*/
+	text-transform: uppercase;
+	margin-top: 30px;
+}
+
+.workingspace h3 span{
+	font-weight: 500;
+}
+
+.workingspace p{
+	font-size: 18px;
+	color: #ACACAC;
+	font-weight: 200;
+	margin: 30px 0;
+		/*atasBawah | kiriKanan*/
+}
+
+/*Testimonial*/
+.testimonial{
+	margin-top: 100px;
+
+}
+
+.testimonial h5{
+	text-align: center;
+	font-weight: 200;
+	font-style: italic;
+	font-size: 24px;
+}
+
+.testimonial figure img{
+	width: 60px;
+	margin: 20px 10px 10px;
+		   /*atas      bawah */
+	opacity: 0.6;
+			/*0.6 = 60*/
+}
+
+.testimonial figure img.utama{
+	width: 90px;
+	opacity: 1;
+	margin-top: 5px;
+}
+
+.testimonial figure h5{
+	font-size: 16px;
+	font-weight: bold;
+	font-style: normal;
+	color: #1C2C5D;
+}
+
+.testimonial figure p{
+	font-size: 12px;
+	color: #ACACAC;
+	margin-top: -5px;
+}
+
+.testimonial figcaption{
+	text-align: center;
+}
+
+
+.footer{
+	margin-top: 100px;
+}
+.footer p{
+	color: #ACACAC;
+	font-size: 18px;
+}
+
+
+/*Utility */
+/*mengatur tombol sebagian */
+.tombol {
+	text-transform: uppercase;
+	border-radius: 40px;
+}
+
+
+/*> Responsive breakpoints*/
+/*DESKTOP VERSION*/
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+	.navbar-brand, .nav-link{
+		color: white !important;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+				/*geser kanan, geser bawah, tebal bayangan(blur), | warna & transparan  */
+	}
+
+.nav-link{
+	text-transform: uppercase;
+		/*agar kapital smua*/
+	margin-right: 30px;
+}
+
+.nav-link:hover::after{
+	content: '';
+	display: block;
+	border-bottom: 3px solid #0B63DC;
+	width: 50%;
+	margin: auto;
+		/*agar garis kettengah*/
+	padding-bottom: 5px;
+		/*agar ada jarak*/
+	margin-bottom: -8px;
+		/*kalkulasi dr atas = 3 + 5*/
+}
+
+.jumbotron{
+	margin-top: -75px;
+		/*Sesuaikan tinggi navbar,cek di element */
+	height: 640px;
+}
+
+.jumbotron .display-4{
+	font-size: 62px;
+
+}
+
+.workingspace{
+	text-align: left;
+}
+
+.testimonial h5{
+	font-size: 32px;
+
+}
+
+ }
